@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Matching - Atico34</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="static/main.js"></script>
+</head>
+<body>
+    <h1> Panel de Asignaciones — Atico34</h1>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3 id="total">-</h3>
+            <p>Total asignaciones</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="pendientes">-</h3>
+            <p>Pendientes revisión</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="revisados">-</h3>
+            <p>Revisados</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Cliente</th>
+                <th>Nombre</th>
+                <th>Comercial Asignado</th>
+                <th>Timestamp</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+</body>
+</html>
