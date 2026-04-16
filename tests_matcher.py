@@ -5,7 +5,7 @@ import json
 # --- CONFIGURACIÓN ---
 BASE_URL = "http://127.0.0.1:8000" 
 MATCH_ENDPOINT = f"{BASE_URL}/match"
-CSV_FILE_PATH = "clientes_a_probar.csv" # Nombre del archivo que acabamos de crear
+CSV_FILE_PATH = "clientes_a_probar.csv" #
 
 def load_test_cases(file_path):
     """Carga los casos de prueba desde el CSV."""
@@ -13,7 +13,6 @@ def load_test_cases(file_path):
         df = pd.read_csv(file_path)
         print(f"✅ Datos cargados exitosamente desde {file_path}. Total de clientes a probar: {len(df)}")
         
-        # Convertir DataFrame a la lista de diccionarios esperada por el script
         test_cases = []
         for index, row in df.iterrows():
             test_cases.append({
