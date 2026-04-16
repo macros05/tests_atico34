@@ -31,6 +31,18 @@ async function revisarCliente(clienteId) {
     });
     cargarDatos();
 }
-
+async function cargarEstadisticas() {
+    const res = await fetch(`${API_URL}/estadisticas_comerciales`);
+    const datos = await res.json();
+    
+    const tbody = document.getElementById('estadisticas');
+    tbody.innerHTML = Object.entries(datos).map(([comercial, total]) => `
+        <tr>
+            <td>${comercial}</td>
+            <td>${total}</td>
+        </tr>
+    `).join('');
+}   
+cargarEstadisticas();
 cargarDatos();
 setInterval(cargarDatos, 5000);
