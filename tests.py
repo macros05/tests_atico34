@@ -16,7 +16,7 @@ def test_match_cliente():
     assert response.status_code == 200
     assert "cliente_id" in data
     assert "comercial_asignado" in data
-    print("✅ TEST PASADO")
+    print("TEST PASADO")
     return data["cliente_id"]
 
 def test_historial():
@@ -26,7 +26,7 @@ def test_historial():
     print(f"Status: {response.status_code}")
     print(f"Total registros: {len(data)}")
     assert response.status_code == 200
-    print("✅ TEST PASADO")
+    print("TEST PASADO")
 
 def test_clientes_no_revisados():
     print("\n--- TEST: GET /clientes_no_revisados ---")
@@ -35,7 +35,7 @@ def test_clientes_no_revisados():
     print(f"Status: {response.status_code}")
     print(f"Pendientes de revisión: {len(data)}")
     assert response.status_code == 200
-    print("✅ TEST PASADO")
+    print("TEST PASADO")
 
 def test_revisar_cliente(cliente_id):
     print(f"\n--- TEST: POST /revisar_cliente/{cliente_id} ---")
@@ -45,10 +45,10 @@ def test_revisar_cliente(cliente_id):
     print(f"Respuesta: {json.dumps(data, indent=2, ensure_ascii=False)}")
     assert response.status_code == 200
     assert "message" in data
-    print("✅ TEST PASADO")
+    print("TEST PASADO")
 
 if __name__ == "__main__":
-    print("🚀 INICIANDO TESTS DEL SISTEMA DE MATCHING")
+    print("INICIANDO TESTS DEL SISTEMA DE MATCHING")
     print("=" * 50)
     
     cliente_id = test_match_cliente()
@@ -57,4 +57,4 @@ if __name__ == "__main__":
     test_revisar_cliente(cliente_id)
     
     print("\n" + "=" * 50)
-    print("✅ TODOS LOS TESTS PASADOS")
+    print("TODOS LOS TESTS PASADOS")
