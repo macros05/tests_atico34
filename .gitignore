@@ -1,2 +1,4 @@
 .env
 venv
+clientes_log.csv
+clientes_a_probar.csv
