@@ -151,3 +151,11 @@ async def obtener_clientes_no_revisados():
     df_historial = pd.read_csv("clientes_log.csv")
     no_revisados = df_historial[df_historial["revisado_por_humano"] == False]
     return no_revisados.to_dict(orient="records")
+
+@app.get("/estadisticas_comerciales")
+async def obtener_estadisticas_comerciales():
+    if not os.path.isfile("clientes_log.csv"):
+        return {"error": "No se han registrado clientes aún."}
+    df_historial = pd.read_csv("clientes_log.csv")
+    estadisticas = df_historial.groupby("comercial_asignado").size()
+    return estadisticas.to_dict()
